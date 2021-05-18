@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>MINOR PROJECT</title>
+        <link rel="stylesheet" href="WebCalculator.css">
+        <script>
+            function display(val)
+		    {   
+                if(document.getElementById("result").value=== undefined){
+                    document.getElementById("result").value= ""
+                }
+			    document.getElementById("result").value+=val; 
+                document.getElementById("result").innerHTML = document.getElementById("result").value
+		    }
+		
+		    function solve()
+		    {
+			    let x = document.getElementById("result").value 
+			    let y = eval(x)
+			    document.getElementById("result").value = y
+                document.getElementById("result").innerHTML = document.getElementById("result").value 
+		    }
+		
+		    function clean()
+		    {
+			    document.getElementById("result").value = ""
+                document.getElementById("result").innerHTML = document.getElementById("result").value
+		    }
+            function clearLastElement(){
+                document.getElementById("result").value =document.getElementById("result").value.substring(0,document.getElementById("result").value.length-1);
+                document.getElementById("result").innerHTML = document.getElementById("result").value
+            }
+        </script>
+    </head>
+    <body>
+        <h1 class="header">Calculator</h1>
+        <br>
+        <div class="screen" id="result" ></div>
+         <div class="grid-container">
+            <div class="grid-item" value="ac" onClick="clean()">AC</div>
+            <div class="heading" value="c" onclick="clearLastElement()"><-</div>
+            <div class="heading" value="%" onClick="display('%')">%</div>
+            <div class="heading" value="/" onClick="display('/')">/</div>
+            <div class="heading" value="7" onClick="display('7')">7</div>
+            <div class="heading" value="8" onclick="display('8')">8</div>
+            <div class="heading" value="9" onclick="display('9')">9</div>
+            <div class="heading" value="*" onclick="display('*')">*</div>
+            <div class="heading" value="4" onclick="display('4')">4</div>
+            <div class="heading" value="5" onclick="display('5')">5</div>
+            <div class="heading" value="6" onclick="display('6')">6</div>
+            <div class="heading" value="-" onclick="display('-')">-</div>
+            <div class="heading" value="1" onclick="display('1')">1</div>
+            <div class="heading" value="2" onclick="display('2')">2</div>
+            <div class="heading" value="3" onclick="display('3')">3</div>
+            <div class="heading" value="+" onclick="display('+')">+</div>
+            </div>
+            <div class="grid-container-2">
+            <div class="heading" value="0" onclick="display('0')">0</div>
+            <div class="heading" value="." onclick="display('.')">.</div>
+            <div class="heading equal" value="=" onclick="solve()">=</div>
+         </div>
+         <!-- <input type="text" id="result" class="result-box" /> -->
+    </body>
+</html>
